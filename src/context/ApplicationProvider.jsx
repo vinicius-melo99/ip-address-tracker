@@ -11,27 +11,7 @@ export default function ApplicationProvider({ children }) {
     getIpData();
   }, []);
 
-  const handleUserInput = ({ target: { value } }) =>{
-    if(userSelection === "IP") {
-        const charValidation = validateChar(value[value.length - 1]);
-        if(charValidation){
-          setUserInput(value);
-        }   
-    } else {
-      setUserInput(value);
-    }
-  }
-
-  const validateChar = (char) => {
-    const regex = /^[0-9.]+$/;
-    return regex.test(Number(char)) || char === '.';
-  }
-
-  const clearLastChar = ({ key }) => {
-    if(key === 'Backspace' && userInput.length === 1) {
-      setUserInput('');
-    }
-  }
+  const handleUserInput = ({ target: { value } }) => setUserInput(value);
 
   const handleSelect = ({ target: { value } }) => {
     setUserInput('');
@@ -41,6 +21,8 @@ export default function ApplicationProvider({ children }) {
   const handleSearch = () => {
     if(userSelection === "IP") {
        getIpData(`&ipAddress=${userInput}`);
+    } else {
+       getIpData(`&domain=${userInput}`);
     }
   }
   
@@ -52,7 +34,6 @@ export default function ApplicationProvider({ children }) {
     userSelection,
     handleUserInput,
     handleSelect,
-    clearLastChar,
     handleSearch,
   }),[
      ipData,
@@ -62,7 +43,6 @@ export default function ApplicationProvider({ children }) {
      userSelection,
      handleUserInput,
      handleSelect,
-     clearLastChar,
      handleSearch,
     ]);
 
