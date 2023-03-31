@@ -18,7 +18,6 @@ export default function Home() {
     userSelection,
     handleUserInput,
     handleSelect,
-    clearLastChar,
     handleSearch
   } = useContext(ApplicationContext);
   
@@ -61,7 +60,6 @@ export default function Home() {
               : "Search for any valid domain ex: www.google.com"
             }
             onChange={ handleUserInput }
-            onKeyDown={ clearLastChar }
             value={ userInput }
             maxLength={ userSelection === "IP" ? "15"
                         : "100" }
