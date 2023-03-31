@@ -61,7 +61,7 @@ export default function Home() {
             }
             onChange={ handleUserInput }
             onKeyDown={({ key }) => {
-              if(key === 'Enter') handleSearch()
+              if(key === 'Enter' && userInput.length > 0) handleSearch()
             }}
             value={ userInput }
             maxLength={ userSelection === "IP" ? "15"
