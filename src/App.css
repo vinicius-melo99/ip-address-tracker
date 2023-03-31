@@ -43,6 +43,9 @@
   z-index: 999;
   border-radius: 20px;
   padding: 25px;
+  -webkit-box-shadow: -10px 1px 58px -25px rgb(0, 0, 0);
+  -moz-box-shadow: -10px 1px 58px -25px rgb(0, 0, 0);
+  box-shadow: -10px 1px 58px -25px rgb(0, 0, 0);
 }
 
 .ip-info-container .info-card {
