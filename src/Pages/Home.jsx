@@ -60,6 +60,9 @@ export default function Home() {
               : "Search for any valid domain ex: www.google.com"
             }
             onChange={ handleUserInput }
+            onKeyDown={({ key }) => {
+              if(key === 'Enter') handleSearch()
+            }}
             value={ userInput }
             maxLength={ userSelection === "IP" ? "15"
                         : "100" }
