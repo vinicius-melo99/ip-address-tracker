@@ -21,6 +21,7 @@ export default function Home() {
     clearLastChar,
     handleSearch
   } = useContext(ApplicationContext);
+  
   const [appInfo, setAppInfo] = useState(null); 
 
   const customMarkerIcon = new Icon({
