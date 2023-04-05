@@ -9,7 +9,7 @@ const useGetIpData = () => {
   const getIpData = async (ENDPOINT = '') => {
     setLoading(true);
     try{
-      const response = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_LntaUjL5SwmMZncXgx8pPrDPK0BW0${ENDPOINT}`);
+      const response = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_FqOI9qbcGvzMpeb1O672ReJf3Jz9k${ENDPOINT}`);
 
       if(response.ok){
         const data = await response.json();
