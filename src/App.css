@@ -96,10 +96,10 @@ header h1 {
 }
 
 .input-container input {
-  width: 50%;
+  width: 35%;
   min-width: 175px;
   font-size: 16px;
-  padding: 0.8em;
+  padding: 0.6em;
   border: none;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -160,11 +160,35 @@ header h1 {
 @media screen and (max-width: 600px) {
   .ip-info-container {
     width: 95%;
-    padding: 18px;
+    padding: 22px;
   }
 
   .input-container input {
     width: 70%;
   }
 
+}
+
+@media screen and (max-width: 565px) {
+  .ip-info-container .info-card {
+    width: calc(100% / 2);
+  }
+
+  .ip-info-container  {
+    flex-wrap: wrap;
+    padding: 15px;
+  }
+
+  .ip-info-container .info-card:nth-of-type(2) {
+    border-right: 0;
+  }
+
+  .ip-info-container .info-card p {
+    margin-bottom: 5px;
+  }
+
+  .ip-info-container .info-card:nth-of-type(1) h4,
+  .ip-info-container .info-card:nth-of-type(2) h4 {
+    margin-bottom: 10px;
+  }
 }
