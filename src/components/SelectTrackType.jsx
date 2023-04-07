@@ -8,14 +8,18 @@ const SelectTrackType = () => {
   } = useContext(ApplicationContext);
 
   return (
-    <select 
-      className="settings"
-      value={ userSelection } 
-      onChange={ handleSelect }
-    >
-      <option>IP</option>
-      <option>Domain</option>
-    </select>
+    <label htmlFor="select-type">
+      Type:
+      <select
+        id="select-type"
+        className="settings"
+        value={ userSelection } 
+        onChange={ handleSelect }
+      >
+        <option>IP</option>
+        <option>Domain</option>
+     </select>
+    </label>
   )
 }
 

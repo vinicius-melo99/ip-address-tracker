@@ -89,6 +89,7 @@ header h1 {
   cursor: pointer;
   border-bottom: 1px solid white;
   transition: 0.3s;
+  margin-left: 10px;
 }
 
 .input-container .settings option {
@@ -99,11 +100,11 @@ header h1 {
   width: 35%;
   min-width: 175px;
   font-size: 16px;
-  padding: 0.6em;
+  padding: 0.8em;
   border: none;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .input-container input::placeholder {

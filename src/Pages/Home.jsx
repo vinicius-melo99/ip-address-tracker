@@ -35,9 +35,9 @@ export default function Home() {
   }
 
   return (
-    <div className="page-view">
+    <main className="page-view">
       <Header />
-      <div className="map-container">
+      <section className="map-container">
 
        { ipData && !loading ? (
         <MapContainer center={[ipData.location.lat, ipData.location.lng]} zoom={15}>
@@ -59,7 +59,7 @@ export default function Home() {
             />
           </Marker>
         </MapContainer>) : <Loading /> }
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }

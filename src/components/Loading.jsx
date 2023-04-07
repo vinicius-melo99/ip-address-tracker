@@ -3,8 +3,8 @@ import loading from '../../images/loading.gif';
 
 export default function Loading() {
   return (
-    <div className="loading-component">
+    <section className="loading-component">
       <img src={ loading } alt="loading gif" />
-    </div>
+    </section>
   )
 }

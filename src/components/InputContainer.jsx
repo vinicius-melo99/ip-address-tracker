@@ -6,10 +6,10 @@ import InputData from './InputData';
 const InputContainer = () => {
 
   return (
-    <div className="input-container">
+    <section className="input-container">
       <SelectTrackType />
       <InputData />    
-    </div>
+    </section>
   )
 }
 
