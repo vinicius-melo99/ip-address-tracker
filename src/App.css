@@ -69,8 +69,9 @@
   margin-bottom: 15px;
 }
 
-header h1 {
+header h2 {
   color: white;
+  font-size: 25px;
 }
 
 .input-container {
@@ -117,13 +118,12 @@ header h1 {
 
 .input-container button.search-button {
   width: 47px;
-  background-image: url(../images/icon-arrow.svg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   background-color: hsl(0, 0%, 17%);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 40% 40%;
   border: none;
   cursor: pointer;
   transition: 0.2s;
@@ -149,7 +149,7 @@ header h1 {
     padding: 15px;
   }
 
-  .ip-info-container h4 {
+  .ip-info-container span {
     font-size: 14px;
   }
   

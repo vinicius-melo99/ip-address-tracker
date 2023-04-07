@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import ApplicationContext from '../context/ApplicationContext';
+import btnIcon from '../../images/icon-arrow.svg';
 
 const InputData = () => {
   const { 
@@ -31,6 +32,7 @@ const InputData = () => {
         onClick={ handleSearch }
         disabled={ !userInput.length > 0 }
       >
+        <img src={ btnIcon } alt="button icon" />
       </button>
     </>
    

@@ -9,21 +9,21 @@ const InfoContainer = () => {
     <section className="ip-info-container">
       <section className="info-card">
         <p>IP ADDRESS</p>
-        <h4>{ ipData && ipData.ip }</h4>
+        <span>{ ipData && ipData.ip }</span>
       </section>
       <section className="info-card">
         <p>LOCATION</p>
-        <h4>{ ipData && ( 
+        <span>{ ipData && ( 
           `${ipData.location.region}, ${ipData.location.country}`) }
-        </h4>
+        </span>
       </section>
       <section className="info-card">
         <p>TIMEZONE</p>
-        <h4>{ ipData && `UTC ${ipData.location.timezone}` }</h4>
+        <span>{ ipData && `UTC ${ipData.location.timezone}` }</span>
       </section>
       <section className="info-card">
         <p>ISP</p>
-        <h4>{ ipData && ipData.isp }</h4>
+        <span>{ ipData && ipData.isp }</span>
       </section>
     </section> )
 }
