@@ -10,7 +10,8 @@ const InputData = () => {
   } = useContext(ApplicationContext);
 
   return (
-    <input 
+    <>
+       <input 
       name="userInput" 
       type="text"
       placeholder={
@@ -30,6 +31,8 @@ const InputData = () => {
         onClick={ handleSearch }
         disabled={ !userInput.length > 0 }
     />
+    </>
+   
   )
 }
 
