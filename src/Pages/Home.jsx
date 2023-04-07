@@ -8,20 +8,16 @@ import 'leaflet/dist/leaflet.css';
 import useGetIpData from '../hooks/useGetIpData';
 import Loading from '../components/Loading';
 import Swal from 'sweetalert2';
+import Header from '../components/Header';
 
 export default function Home() {
   const { 
     ipData, 
     error, 
     loading, 
-    userInput, 
-    userSelection,
-    handleUserInput,
-    handleSelect,
-    handleSearch
   } = useContext(ApplicationContext);
   
-  const [appInfo, setAppInfo] = useState(null); 
+  // const [appInfo, setAppInfo] = useState(null); 
 
   const customMarkerIcon = new Icon({
     iconUrl: markerIcon,
@@ -40,59 +36,7 @@ export default function Home() {
 
   return (
     <div className="page-view">
-      <header>
-        <h1>IP Address Tracker</h1>
-        <div className="input-container">
-          <select 
-            className="settings"
-            value={userSelection} 
-            onChange={ handleSelect }
-          >
-            <option>IP</option>
-            <option>Domain</option>
-          </select>
-          <input 
-            name="userInput" 
-            type="text"
-            placeholder={
-              userSelection === "IP" ? (
-              "Search for any valid IP Address ex: 165.132.87.10")
-              : "Search for any valid domain ex: www.google.com"
-            }
-            onChange={ handleUserInput }
-            onKeyDown={({ key }) => {
-              if(key === 'Enter' && userInput.length > 0) handleSearch()
-            }}
-            value={ userInput }
-            maxLength={ userSelection === "IP" ? "15"
-                        : "100" }
-          />
-          <button className='search-button'
-            onClick={ handleSearch }
-            disabled={ !userInput.length > 0 }
-          />
-        </div>
-        <div className="ip-info-container">
-            <div className="info-card">
-              <p>IP ADDRESS</p>
-              <h4>{ ipData && ipData.ip }</h4>
-            </div>
-            <div className="info-card">
-              <p>LOCATION</p>
-              <h4>{ ipData && ( 
-                `${ipData.location.region}, ${ipData.location.country}`) }
-              </h4>
-            </div>
-            <div className="info-card">
-              <p>TIMEZONE</p>
-              <h4>{ ipData && `UTC ${ipData.location.timezone}` }</h4>
-            </div>
-            <div className="info-card">
-              <p>ISP</p>
-              <h4>{ ipData && ipData.isp }</h4>
-            </div>
-        </div>
-      </header>
+      <Header />
       <div className="map-container">
 
        { ipData && !loading ? (
