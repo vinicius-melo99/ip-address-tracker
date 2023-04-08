@@ -37,28 +37,30 @@ export default function Home() {
   return (
     <main className="page-view">
       <Header />
-      <section className="map-container">
-
-       { ipData && !loading ? (
-        <MapContainer center={[ipData.location.lat, ipData.location.lng]} zoom={15}>
-          <TileLayer 
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          <Marker 
-            position={[ipData.location.lat, ipData.location.lng]}
-            icon={customMarkerIcon}
-          >
-            <Circle
-              center={[ipData.location.lat, ipData.location.lng]}
-              pathOptions={{
-                color: 'red',
-                fillColor: 'red',
-              }}
-              radius={350}
+      
+      <section className="map-container-wraper">
+       <section className="map-container">
+          { ipData && !loading ? (
+          <MapContainer center={[ipData.location.lat, ipData.location.lng]} zoom={15}>
+            <TileLayer 
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-          </Marker>
-        </MapContainer>) : <Loading /> }
+            <Marker 
+              position={[ipData.location.lat, ipData.location.lng]}
+              icon={customMarkerIcon}
+            >
+              <Circle
+                center={[ipData.location.lat, ipData.location.lng]}
+                pathOptions={{
+                  color: 'red',
+                  fillColor: 'red',
+                }}
+                radius={350}
+              />
+            </Marker>
+          </MapContainer>) : <Loading /> }
+        </section>
       </section>
     </main>
   );
